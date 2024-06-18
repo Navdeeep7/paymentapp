@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 export const Landingpage=()=>{
+  const navigate=useNavigate();
     return (
         <div className="bg-gray-100 h-screen flex flex-col justify-center items-center">
           <motion.div 
@@ -28,7 +30,7 @@ export const Landingpage=()=>{
               className="bg-blue-500 text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              onClick={() => window.location.href = '/dashboard'}
+              onClick={() => navigate("/dashboard")}
             >
               Explore Armaan Pay
             </motion.button>
