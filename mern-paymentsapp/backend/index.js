@@ -2,7 +2,11 @@ const express = require("express");
 const app=express();
 const cors = require("cors");
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+   origin:[""],
+   methods:["POST","GET"],
+   credentials:true
+}));
 const port=3000;
 const mainRouter=require("./routes/index");
  
