@@ -3,7 +3,7 @@ const app=express();
 const cors = require("cors");
 app.use(express.json());
 app.use(cors({
-   origin:[""],
+   origin:["https://mern-paymentapp.vercel.app"],
    methods:["POST","GET"],
    credentials:true
 }));
