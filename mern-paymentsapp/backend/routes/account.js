@@ -86,7 +86,7 @@ router.get("/balance",authMiddleware,async  (req,res)=>{
   await account.updateOne({userId:to},{ $push: { history: transaction2 }}).session(session)
       // Commit the transaction 
       await session.commitTransaction();
-      await new Promise(resolve => setTimeout(resolve, 500));
+      await new Promise(resolve => setTimeout(resolve, 1000));
       const updatedSenderAccount = await account.findOne({ userId: req.userId });
       const updatedRecipientAccount = await account.findOne({ userId: to });
      
