@@ -9,7 +9,7 @@ app.use((req, res, next) => {
    next();
  });
 app.use(cors({
-   origin:["https://paymentapp-mu.vercel.app"],
+   origin:["https://paymentapp-8odl22sj2-navdeeps-projects-69a05972.vercel.app"],
    methods:["POST","GET"],
    credentials:true
 }));
