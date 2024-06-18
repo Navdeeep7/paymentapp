@@ -7,6 +7,9 @@ app.use(cors({
    methods:["POST","GET"],
    credentials:true
 }));
+app.get("/",(req,res)=>{
+   res.json({msg:"Welcome to my API"});
+})
 const port=3000;
 const mainRouter=require("./routes/index");
  
