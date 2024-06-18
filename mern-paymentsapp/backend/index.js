@@ -7,6 +7,10 @@ app.use(cors({
    methods:["POST","GET"],
    credentials:true
 }));
+app.use((req, res, next) => {
+   res.setHeader("Content-Security-Policy", "default-src 'self'; script-src 'self' blob:;");
+   next();
+ });
 app.get("/",(req,res)=>{
    res.json({msg:"Welcome to my API"});
 })
