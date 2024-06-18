@@ -7,7 +7,7 @@ export const Transactions=()=>{
     useEffect(()=>{
         const fetchHistory=async()=>{
         
-            axios.get("http://localhost:3000/api/v1/account/history", {
+            axios.get("https://mern-paymentapp.vercel.app/api/v1/account/history", {
                 headers: {
                   Authorization: `Bearer ${token}`,
                 },

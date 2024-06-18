@@ -11,7 +11,7 @@ export const Signin=()=>{
   const [username,setUsername]=useState("");
   const [password,setPassword]=useState("");
   function click(){
-      axios.post("http://localhost:3000/api/v1/user/signin",{
+      axios.post("https://mern-paymentapp.vercel.app/api/v1/user/signin",{
          username,
          password
       }).then((res)=>{

@@ -9,7 +9,7 @@ app.use((req, res, next) => {
    next();
  });
 app.use(cors({
-   origin:["https://mern-paymentapp.vercel.app"],
+   origin:[""],
    methods:["POST","GET"],
    credentials:true
 }));

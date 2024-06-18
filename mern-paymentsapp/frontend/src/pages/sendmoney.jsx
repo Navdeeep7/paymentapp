@@ -44,7 +44,7 @@ export const SendMoney=()=>{
   let config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'http://localhost:3000/api/v1/account/transfer',
+    url: 'https://mern-paymentapp.vercel.app/api/v1/account/transfer',
     headers: { 
       Authorization:"Bearer "+localStorage.getItem("token") || "empty"
     },

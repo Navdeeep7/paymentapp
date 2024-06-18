@@ -14,7 +14,7 @@ export function Appbar(){
           
 
           const response = await axios.get(
-            "http://localhost:3000/api/v1/account/balance",
+            "https://mern-paymentapp.vercel.app/api/v1/account/balance",
             
             {
               headers: {
