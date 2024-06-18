@@ -69,18 +69,33 @@ router.get("/balance",authMiddleware,async  (req,res)=>{
       const toUser=await user.findOne({_id:to}).session(session)
       const fromUser=await user.findOne({_id:req.userId}).session(session)
       console.log(fromUser.firstName);
-      const formattedDate = now.toISOString().split('T')[0];
+
+      const options = {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        hour12: false,
+        timeZone: 'Asia/Kolkata' // Indian Standard Time (IST)
+      };
+
+
+
+
+      const formattedDate = now.toLocaleString('en-IN', options);
      const transaction={
-        date: formattedDate,
+      date: formattedDate.split(',')[0],
      amount:amount,
     description:"Sent to "+toUser.firstName,
-    time: new Date().toLocaleTimeString()
+    time: formattedDate.split(',')[1].trim()
   }
      const transaction2={
-        date: formattedDate,
+      date: formattedDate.split(',')[0],
     amount:amount,
     description:"Received from "+fromUser.firstName,
-    time: new Date().toLocaleTimeString()
+    time: formattedDate.split(',')[1].trim()
   }
   await account.updateOne({ userId: req.userId},{ $push: { history: transaction }}).session(session)
   await account.updateOne({userId:to},{ $push: { history: transaction2 }}).session(session)
