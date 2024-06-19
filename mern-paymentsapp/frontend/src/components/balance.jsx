@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import RiseLoader from "react-spinners/RiseLoader";
+import PulseLoader from "react-spinners/PulseLoader";
 export function Balance() {
   const [balance, setBalance] = useState(0);
   const token = localStorage.getItem("token");
@@ -39,7 +39,9 @@ export function Balance() {
 
   return (
     <div className="m-2 text-xl font-semibold p-2 border-2 rounded-lg border-gray-200 mt-4 inline-block sm:text-2xl lg:text-5xl flex items-center">
-            Balance: Rs {balance} <RiseLoader color="#404040" loading={loading} size={15}/>
+            Balance: Rs {balance} <PulseLoader
+  color="#484848" loading={loading}
+/>
         </div>
   );
 }

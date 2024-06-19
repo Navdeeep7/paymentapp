@@ -3,7 +3,7 @@ import axios from "axios";
 import { Button } from "./button";
 import { Transactions } from "../pages/transactions";
 import { useNavigate } from "react-router-dom";
-import RiseLoader from "react-spinners/RiseLoader";
+import PulseLoader from "react-spinners/PulseLoader";
 export function Appbar(){
   const [name,setName]=useState("");
   const [token,setToken]=useState(localStorage.getItem("token"));
@@ -53,7 +53,9 @@ export function Appbar(){
               </div>
               <div className="m-2 font-semibold text-lg flex flex-col items-center sm:text-2xl sm:flex-row">
               
-              <div className="m-2 self-end  sm:self-auto flex">Hello <RiseLoader color="#404040" loading={loading} size={10}/>{name}</div>
+              <div className="m-2 self-end  sm:self-auto flex items-center">Hello<PulseLoader
+  color="#484848" loading={loading}
+/>{name}</div>
                 <div><Button label={"Transactions"} onClickHandle={click}/>
                 <Button label={"Logout"} onClickHandle={clicklogout}></Button></div>
               </div>
