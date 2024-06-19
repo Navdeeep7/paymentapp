@@ -19,7 +19,7 @@ router.post("/signup",async (req,res)=>{
         { 
             const userExist=await user.findOne({username:userInfo.username});
             if(userExist){
-                return res.status(411).json({
+                return res.json({
                     msg: "Email already taken" 
                 })
                 
