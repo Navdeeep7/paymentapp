@@ -44,6 +44,7 @@ export const Signup=()=>{
           })
           localStorage.setItem("token",response.data.token);
           alert(response.data.msg);
+          console.log(response.data.msg);
           if(response.data.success){
             navigate("/dashboard");
           }
