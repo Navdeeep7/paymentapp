@@ -55,7 +55,7 @@ export function Appbar(){
               
               <div className="m-2 self-end  sm:self-auto flex items-center">Hello<PulseLoader
   color="#484848" loading={loading}
-/>{name}</div>
+/> {name}</div>
                 <div><Button label={"Transactions"} onClickHandle={click}/>
                 <Button label={"Logout"} onClickHandle={clicklogout}></Button></div>
               </div>
