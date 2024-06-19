@@ -53,7 +53,7 @@ export function Appbar(){
               </div>
               <div className="m-2 font-semibold text-lg flex flex-col items-center sm:text-2xl sm:flex-row">
               
-              <div className="m-2 self-end  sm:self-auto flex">Hello <RiseLoader color="#404040" loading={loading} size={10}/>{name}</div>
+              <div className="m-2 self-end  sm:self-auto flex">Hello <RiseLoader color="#404040" loading={loading} size={8}/>{name}</div>
                 <div><Button label={"Transactions"} onClickHandle={click}/>
                 <Button label={"Logout"} onClickHandle={clicklogout}></Button></div>
               </div>
