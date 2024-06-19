@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import RiseLoader from "react-spinners/RiseLoader";
 export function Balance() {
   const [balance, setBalance] = useState(0);
   const token = localStorage.getItem("token");
-
+  const [loading,setLoading]=useState(false);
   useEffect(() => {
     const fetchBalance = async () => {
+      setLoading(true);
       try {
         if (token) {
           
@@ -21,7 +23,10 @@ export function Balance() {
               },
             }
           );
-
+          if(response.data){
+            setLoading(false);
+           }
+          
           setBalance(response.data.balance);
         }
       } catch (error) {
@@ -33,8 +38,8 @@ export function Balance() {
   }, [token]);
 
   return (
-    <div className="m-2 text-xl font-semibold p-2 border-2 rounded-lg border-gray-200 mt-4 inline-block sm:text-2xl lg:text-5xl">
-            Balance: Rs {balance}
+    <div className="m-2 text-xl font-semibold p-2 border-2 rounded-lg border-gray-200 mt-4 inline-block sm:text-2xl lg:text-5xl flex items-center">
+            Balance: Rs <RiseLoader color="#404040" loading={loading} size={15}/>{balance}
         </div>
   );
 }
