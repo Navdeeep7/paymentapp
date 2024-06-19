@@ -9,7 +9,7 @@ app.use((req, res, next) => {
    next();
  });
 app.use(cors({
-   origin:["https://paymentapp-three.vercel.app"],
+   origin:["https://paymentapp-indol.vercel.app"],
    methods:["POST","GET"],
    credentials:true
 }));
