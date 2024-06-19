@@ -25,11 +25,10 @@ export function Appbar(){
               },
             }
           );
-
-          setName(response.data.name);
-          if(response.data){
+           if(response.data){
             setLoading(false);
            }
+          setName(response.data.name);
         }
       } catch (error) {
         console.error("Error fetching name", error);
@@ -49,14 +48,18 @@ export function Appbar(){
         return (
             <div className=" border-2 rounded-lg border-gray-200 m-2 flex justify-between">
               <div className="m-2 font-semibold text-lg self-center  sm:text-2xl">
-                Payments App
-              </div>
-              <div className="m-2 font-semibold text-lg flex flex-col items-center sm:text-2xl sm:flex-row">
-              
-              <div className="m-2 self-end  sm:self-auto flex items-center">Hello<PulseLoader
+              <div className="m-2 self-end  sm:self-auto flex items-center">Hello <PulseLoader
   color="#484848" loading={loading}
-/> {name}</div>
-                <div><Button label={"Transactions"} onClickHandle={click}/>
+/>{name}</div>   
+              </div>
+              <div className="m-2 font-semibold text-lg flex flex-row  sm:text-2xl sm:flex-row">
+              
+                
+
+
+
+
+                <div className="flex"><Button label={"History"} onClickHandle={click}/>
                 <Button label={"Logout"} onClickHandle={clicklogout}></Button></div>
               </div>
             </div>
