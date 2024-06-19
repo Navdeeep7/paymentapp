@@ -43,6 +43,7 @@ export const Signup=()=>{
             password
           })
           localStorage.setItem("token",response.data.token);
+          alert(response.data.msg);
           if(response.data.success){
             navigate("/dashboard");
           }
