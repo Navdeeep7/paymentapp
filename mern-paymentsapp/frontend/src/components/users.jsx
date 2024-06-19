@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import PropagateLoader from "react-spinners/PropagateLoader";
+import RiseLoader from "react-spinners/RiseLoader";
 export function Users() {
   const [users, setUsers] = useState([]);
   const [filter, setFilter] = useState('');
@@ -60,7 +60,7 @@ export function Users() {
 
 
       {loading ? (
-        <div className='flex justify-center items-center p-40'><PropagateLoader color="#4f4f4f" /></div>
+        <div className='flex justify-center items-center p-40'><RiseLoader color="#404040" loading={loading} size={30}/></div>
       ) : (
         <div>
         <div className='flex flex-col '>
