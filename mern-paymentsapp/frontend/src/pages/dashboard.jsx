@@ -12,6 +12,7 @@ export const Dashboard=()=>{
     const [token,setToken]=useState(localStorage.getItem("token"));
    
     useEffect(() => {
+      
         const fetchBalance =  () => {
           try {
             
@@ -27,6 +28,10 @@ export const Dashboard=()=>{
               ).then((res)=>{
                 if(!res.data.success){
                     navigate("/signup");
+                    
+                }
+                else{
+                  setUserexist(true);
                 }
                
                 
@@ -44,10 +49,17 @@ export const Dashboard=()=>{
       }, [token]);
     return(
         <div>
-
-            <Appbar/>
+             <div>
+           {userexist && (
+        <div>
+           <Appbar/>
             <Balance value={"9999"}/>
             <Users/>
+        </div>
+      )}
+    </div>
+            
+           
         </div>
 
     )
