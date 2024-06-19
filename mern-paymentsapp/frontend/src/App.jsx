@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div>
-      <SpeedInsights/>
+      
         <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landingpage/>}></Route>
