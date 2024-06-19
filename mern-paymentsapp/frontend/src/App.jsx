@@ -5,7 +5,7 @@ import { Dashboard } from "./pages/dashboard"
 import { SendMoney } from "./pages/sendmoney"
 import { Landingpage } from "./pages/landingpage"
 import { Transactions } from "./pages/transactions"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+
 function App() {
 
   return (
