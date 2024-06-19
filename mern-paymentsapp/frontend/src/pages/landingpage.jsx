@@ -16,7 +16,7 @@ export const Landingpage=()=>{
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              Welcome to Armaan Pay
+              Welcome to Payments app
             </motion.h1>
             <motion.p 
               className="text-lg mb-8"
@@ -32,7 +32,7 @@ export const Landingpage=()=>{
               whileTap={{ scale: 0.9 }}
               onClick={() => navigate("/dashboard")}
             >
-              Explore Armaan Pay
+              Explore 
             </motion.button>
           </motion.div>
         </div>

@@ -43,7 +43,7 @@ export function Appbar(){
         return (
             <div className=" border-2 rounded-lg border-gray-200 m-2 flex justify-between">
               <div className="m-2 font-semibold text-lg self-center  sm:text-2xl">
-                Armaan Pay
+                Payments App
               </div>
               <div className="m-2 font-semibold text-lg flex flex-col items-center sm:text-2xl sm:flex-row">
               

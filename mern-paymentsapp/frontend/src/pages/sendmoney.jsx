@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import axios from "axios";
-
+import RingLoader from "react-spinners/RingLoader";
 export const SendMoney = () => {
   const navigate = useNavigate();
   const [response, setResponse] = useState({});
@@ -42,7 +42,7 @@ export const SendMoney = () => {
   const config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'http://localhost:3000/api/v1/account/transfer',
+    url: 'https://mern-paymentapp.vercel.app/api/v1/account/transfer',
     headers: {
       Authorization: "Bearer " + (localStorage.getItem("token") || "empty")
     },
@@ -120,10 +120,14 @@ export const SendMoney = () => {
                         </button>
                       </div>
                       <div className="p-4 md:p-5 space-y-4">
-                        <div className="flex flex-col items-center justify-center p-4 md:p-5 border-t border-gray-200 rounded-b text-5xl text-white font-semibold">
+                        <div className="flex flex-col items-center justify-center p-4 md:p-5  rounded-b text-5xl text-white font-semibold">
                           {loading ? (
-                            <div className="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b text-black">
-                              <p>Loading...</p>
+                            <div className="flex items-center p-4 md:p-5  rounded-b text-black">
+                              <p><RingLoader
+  color="#8b3bff"
+  size={70}
+  speedMultiplier={1.3}
+/></p>
                             </div>
                           ) : (
                             response.success && (
