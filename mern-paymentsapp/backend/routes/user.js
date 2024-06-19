@@ -20,7 +20,7 @@ router.post("/signup",async (req,res)=>{
             const userExist=await user.findOne({username:userInfo.username});
             if(userExist){
                 return res.status(411).json({
-                    message: "Email already taken" 
+                    msg: "Email already taken" 
                 })
                 
             }
@@ -39,7 +39,7 @@ router.post("/signup",async (req,res)=>{
                 uid
             },JWT_SECRET)
             res.json({
-                message: "User created successfully",
+                msg: "User created successfully",
                 token: token,
                 balance:newwacc.balance,
                 success:true
