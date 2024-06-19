@@ -24,7 +24,7 @@ export const Transactions=()=>{
  return(
     <div>
         <div className="">
-    <div className="text-center text-4xl font-semibold m-2">Transactions history</div>
+    <div  className="text-center text-2xl font-semibold m-2 mb-4  sm:text-4xl">Transactions history</div>
     {/* <div className="m-2 border-2 rounded-lg flex justify-between items-center">
       <div className="">
         <div className="p-2 text-2xl font-semibold">description</div>
@@ -44,9 +44,9 @@ export const Transactions=()=>{
         return(
             <div className="m-2 border-2 rounded-lg flex justify-between items-center">
       <div className="">
-        <div className="p-2 text-2xl font-semibold">{transaction.description}</div>
+        <div className="p-2 text-xl font-semibold sm:text-2xl">{transaction.description}</div>
       <div className="pl-2">Date:{transaction.date}</div>
-      <div className="pl-2">Time:{transaction.time}</div>
+      <div className="pl-2 mb-2">Time:{transaction.time}</div>
       </div>
       <div className="p-2 text-2xl font-semibold sm:text-4xl">{sent ? '-' : '+'} Rs {transaction.amount}</div>
     </div>

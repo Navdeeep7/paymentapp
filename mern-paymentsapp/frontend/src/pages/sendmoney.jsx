@@ -7,7 +7,12 @@ export const SendMoney=()=>{
   const [isOpen, setIsOpen] = useState(false);
   const[loading,setLoading]=useState(false);
   const toggleModal = () => {
-    setIsOpen(!isOpen);
+    
+    if(amount==0){
+      alert("Enter valid amount")
+    }
+    else{
+      setIsOpen(!isOpen);
     setLoading(true)
     console.log(loading)
       try{
@@ -23,11 +28,13 @@ export const SendMoney=()=>{
           
           
         }
+
+    }
+    
         
       
      
       
-  };
 
   const closeModal = () => {
     setIsOpen(false);
@@ -98,7 +105,7 @@ export const SendMoney=()=>{
         >
           <div className="relative p-4 w-full max-w-2xl">
             {/* Modal content */}
-            <div className="relative bg-white rounded-lg shadow ">
+            <div className="relative bg-gray-300 rounded-lg shadow ">
               {/* Modal header */}
               <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
                 <h3 className="text-xl font-semibold text-gray-900  ">
