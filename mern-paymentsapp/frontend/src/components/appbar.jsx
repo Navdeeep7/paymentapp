@@ -3,12 +3,15 @@ import axios from "axios";
 import { Button } from "./button";
 import { Transactions } from "../pages/transactions";
 import { useNavigate } from "react-router-dom";
+import RiseLoader from "react-spinners/RiseLoader";
 export function Appbar(){
   const [name,setName]=useState("");
   const [token,setToken]=useState(localStorage.getItem("token"));
+  const [loading,setLoading]=useState(false);
   const navigate=useNavigate();
   useEffect(() => {
     const fetchBalance = async () => {
+      setLoading(true);
       try {
         if (token) {
           
@@ -24,6 +27,9 @@ export function Appbar(){
           );
 
           setName(response.data.name);
+          if(response.data){
+            setLoading(false);
+           }
         }
       } catch (error) {
         console.error("Error fetching name", error);
@@ -47,7 +53,7 @@ export function Appbar(){
               </div>
               <div className="m-2 font-semibold text-lg flex flex-col items-center sm:text-2xl sm:flex-row">
               
-                <div className="m-2 self-end  sm:self-auto">Hello {name}</div>
+              <div className="m-2 self-end  sm:self-auto flex">Hello <RiseLoader color="#404040" loading={loading} size={10}/>{name}</div>
                 <div><Button label={"Transactions"} onClickHandle={click}/>
                 <Button label={"Logout"} onClickHandle={clicklogout}></Button></div>
               </div>
