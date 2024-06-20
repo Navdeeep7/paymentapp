@@ -53,13 +53,11 @@ export const Dashboard=()=>{
       }, [token]);
     return(
         <div >
-          <div className="flex justify-center pt-40">
+          {loading ? (<div className="flex justify-center pt-40">
           <PulseLoader
         color="#484848" loading={loading} size={20}
       />
-          </div>
-           
-             <div>
+          </div>):(<div>
            {userexist && (
         <div>
            <Appbar/>
@@ -67,7 +65,9 @@ export const Dashboard=()=>{
             <Users/>
         </div>
       )}
-    </div>
+    </div>)}
+           
+             
             
            
         </div>
