@@ -4,17 +4,20 @@ import { Balance } from "../components/balance"
 import { Users } from "../components/users"
 import axios from "axios"
 import { Navigate, useNavigate } from "react-router-dom"
+import PulseLoader from "react-spinners/PulseLoader";
+
 
 
 export const Dashboard=()=>{
     const[userexist,setUserexist]=useState(false);
     const navigate=useNavigate();
     const [token,setToken]=useState(localStorage.getItem("token"));
-   
+    const [loading,setLoading]=useState(false)
     useEffect(() => {
       
         const fetchBalance =  () => {
           try {
+            setLoading(true);
             
               
                 axios.get(
@@ -32,6 +35,7 @@ export const Dashboard=()=>{
                 }
                 else{
                   setUserexist(true);
+                  setLoading(false);
                 }
                
                 
@@ -49,6 +53,9 @@ export const Dashboard=()=>{
       }, [token]);
     return(
         <div>
+           <PulseLoader
+        color="#484848" loading={loading} size={20}
+      />
              <div>
            {userexist && (
         <div>
