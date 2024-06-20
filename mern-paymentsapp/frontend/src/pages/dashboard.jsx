@@ -52,7 +52,7 @@ export const Dashboard=()=>{
         
       }, [token]);
     return(
-        <div>
+        <div className="flex justify-center mt-1/2">
            <PulseLoader
         color="#484848" loading={loading} size={20}
       />
