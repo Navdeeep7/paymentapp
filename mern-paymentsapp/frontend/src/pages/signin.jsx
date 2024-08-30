@@ -35,9 +35,9 @@ export const Signin=()=>{
        <InputBox label={"Password"} value={password} onChange={(e)=>{
           setPassword(e.target.value)}} placeholder={"Enter your password"}/>
        <div className="m-2">
-        <Button label={"Sign in"} onClickHandle={click}></Button>
+        <Button label={loading ? "Loading..." : "Log In"} onClickHandle={click}></Button>
        </div>
-       <BottomWarning label={"Don't have an account?"} buttonText={loading ? "Loading" : "Sign up"} to={"/signup"}/>
+       <BottomWarning label={"Don't have an account?"} buttonText={"Sign up"} to={"/signup"}/>
     </div>
     
   </div>
