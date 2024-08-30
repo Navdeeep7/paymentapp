@@ -8,8 +8,8 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom"
 export const Signin=()=>{
    const navigate=useNavigate();
-  const [username,setUsername]=useState("");
-  const [password,setPassword]=useState("");
+  const [username,setUsername]=useState("admin@gmail.com");
+  const [password,setPassword]=useState("admin12");
   function click(){
       axios.post("https://mern-paymentapp.vercel.app/api/v1/user/signin",{
          username,
@@ -27,9 +27,9 @@ export const Signin=()=>{
     <div className="rounded-lg bg-white w-80 text-center p-2 h-max px-4">
        <Heading label={"Sign in"}/>
        <SubHeading label={"Enter your information to access your account"}/>
-       <InputBox label={"Email"} onChange={(e)=>{
+       <InputBox label={"Email"} value={username} onChange={(e)=>{
           setUsername(e.target.value)}} placeholder={"Enter your email"}/>
-       <InputBox label={"Password"}  onChange={(e)=>{
+       <InputBox label={"Password"} value={password} onChange={(e)=>{
           setPassword(e.target.value)}} placeholder={"Enter your password"}/>
        <div className="m-2">
         <Button label={"Sign in"} onClickHandle={click}></Button>
