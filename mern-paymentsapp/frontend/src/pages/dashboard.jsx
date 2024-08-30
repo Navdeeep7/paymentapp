@@ -30,7 +30,7 @@ export const Dashboard=()=>{
                 }
               ).then((res)=>{
                 if(!res.data.success){
-                    navigate("/signup");
+                    navigate("/signin");
                     
                 }
                 else{
