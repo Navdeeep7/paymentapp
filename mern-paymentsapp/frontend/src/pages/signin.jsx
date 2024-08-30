@@ -10,11 +10,14 @@ export const Signin=()=>{
    const navigate=useNavigate();
   const [username,setUsername]=useState("admin@gmail.com");
   const [password,setPassword]=useState("admin12");
+  const [loading,setLoading]=useState(false);
   function click(){
+   setLoading(true);
       axios.post("https://mern-paymentapp.vercel.app/api/v1/user/signin",{
          username,
          password
       }).then((res)=>{
+         setLoading(false)
          alert(res.data.msg);
          localStorage.setItem("token",res.data.token);
          navigate("/dashboard");
@@ -34,7 +37,7 @@ export const Signin=()=>{
        <div className="m-2">
         <Button label={"Sign in"} onClickHandle={click}></Button>
        </div>
-       <BottomWarning label={"Don't have an account?"} buttonText={"Sign up"} to={"/signup"}/>
+       <BottomWarning label={"Don't have an account?"} buttonText={loading ? "Loading" : "Sign up"} to={"/signup"}/>
     </div>
     
   </div>
