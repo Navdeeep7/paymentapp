@@ -16,7 +16,7 @@ export const Landingpage=()=>{
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              Welcome to Payments app
+              Welcome to Pocket Flow
             </motion.h1>
             <motion.p 
               className="text-lg mb-8"
